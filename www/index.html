@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' http://cozinhapp.sergiolopes.org/ data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">-->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        
+        <link rel="stylesheet" href="icons/material.css">
+        <link rel="stylesheet" href="css/materialize.min.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Só de Cenoura Garçom</title>
+    </head>
+    <body>
+
+        <div class="topo-fixo z-depth-1">
+
+            <div class="yellow darken-4 white-text valign-wrapper">
+                <h5 class="titulo">Só de Cenoura</h5>
+
+                <div>
+                    <i id="icone-camera" class="material-icons waves-effect waves-light waves-circle">camera</i>
+                    <i data-activates="submenu" data-gutter="5" data-constrainwidth="false" 
+                    class="material-icons waves-effect waves-light waves-circle dropdown-button">more_vert</i>
+                </div>
+
+                <ul class="dropdown-content" id="submenu">
+                    <li><a class="black-text">Sobre</a></li>
+                </ul>
+
+            </div>
+
+            <ul class="tabs yellow darken-4">
+                <li class="tab"><a href="#bolos" class="white-text waves-effect waves-light">Bolos</a></li>
+                <li class="tab"><a href="#bebidas" class="white-text waves-effect waves-light">Bebidas</a></li>
+            </ul>
+
+        </div>
+
+        <div class="section" id="bolos">
+            <h6 class="container brown-text">Em pedaços</h6>
+            <div class="collection">
+                <a href="#" class="collection-item waves-effect black-text">
+                    <span class="badge brown-text"></span>
+                    - Bolo de Cenoura em pedaço
+                </a>
+                <a href="#" class="collection-item waves-effect  black-text">
+                    <span class="badge brown-text"></span>
+                    - Bolo de Cenoura com Nutella em pedaço
+                    
+                </a>
+                <a href="#" class="collection-item waves-effect black-text">
+                    <span class="badge brown-text"></span>
+                    - Bolo de Cenoura com brigadeiro em pedaço
+                </a>
+                <a href="#" class="collection-item waves-effect black-text">
+                    <span class="badge brown-text"></span>
+                    - Bolo de Cenoura Açucarado em pedaço
+                </a>
+            </div>
+            <h6 class="container brown-text">Inteiros</h6>
+            <div class="collection">
+                <a href="#" class="collection-item waves-effect black-text">
+                    <span class="badge brown-text"></span>
+                    - Bolo de Cenoura inteiro
+                </a>
+                <a href="#" class="collection-item waves-effect black-text">
+                    <span class="badge brown-text"></span>
+                    - Bolo de Cenoura com Nutela inteiro
+                </a>
+                <a href="#" class="collection-item waves-effect black-text">
+                    <span class="badge brown-text"></span>
+                    - Bolo de Cenoura com brigadeiro inteiro
+                </a>
+                <a href="#" class="collection-item waves-effect black-text">
+                    <span class="badge brown-text"></span>
+                    - Bolo de Cenoura Açucarado inteiro
+                </a>
+            </div>
+        </div>
+
+        <div class="section" id="bebidas">
+            <h6 class="container brown-text">Cafés</h6>
+            <div class="collection">
+                <a href="#" class="collection-item waves-effect black-text">
+                    <span class="badge brown-text"></span>
+                    - Café Expresso
+                </a>
+                <a href="#" class="collection-item waves-effect  black-text">
+                    <span class="badge brown-text"></span>
+                    - Cappuccino
+                </a>
+                <a href="#" class="collection-item waves-effect black-text">
+                    <span class="badge brown-text"></span>
+                    - Mocaccino
+                </a>
+            </div>
+            <h6 class="container brown-text">Refrigerantes</h6>
+            <div class="collection">
+                <a href="#" class="collection-item waves-effect black-text">
+                    <span class="badge brown-text"></span>
+                    - Coca
+                </a>
+                <a href="#" class="collection-item waves-effect black-text">
+                    <span class="badge brown-text"></span>
+                    - Soda
+                </a>
+                <a href="#" class="collection-item waves-effect black-text">
+                    <span class="badge brown-text"></span>
+                    - Guaraná
+                </a>
+            </div>
+        </div>
+
+        
+        <div class="fixed-action-btn" style="left: 23px;">
+                <a id="cancelar" class="btn-floating btn-large waves-effect waves-light">
+                    <i class="material-icons">close</i>
+                </a>
+        </div>
+
+        <div class="fixed-action-btn">
+            <a id="confirmar" href="#confirmacao" class="btn-floating btn-large waves-effect waves-light modal-trigger">
+                <i class="material-icons">done</i>
+            </a>
+        </div>
+
+        <div class="modal modal-fixed-footer" id="confirmacao">
+            
+            <div class="modal-content">
+                <h5>Resumo do Pedido</h5>
+                <input type="number" class="validate" placeholder="número da mesa" id="numero-mesa">
+                <blockquote id="resumo">Os produtos selecionados foram: </blockquote>
+                <div class="produtos-adicionados"></div>
+                
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn deep-orange waves-effect waves-light modal-close acao-finalizar">Pedir</button>
+                <button class="btn-flat waves-effect waves-red modal-close">Cancelar</button>
+            </div>
+
+        </div>
+
+        <script src="./lib/jquery.min.js"></script>
+        <script src="./lib/system.js"></script>
+        <script src="./lib/materialize.min.js"></script>
+        <script src="cordova.js"></script>
+
+        <script>
+            System.defaultJSExtensions = true;
+            System.import('./js/app.js');
+        </script>
+    
+    </body>
+</html>
