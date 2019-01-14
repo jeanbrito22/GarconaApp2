@@ -2,7 +2,7 @@
 <widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Só garçonete APP</name>
     <description>Um app para garçonetes.</description>
-    <author email="jean@jeanbrito.com.br" href="http://jeanbrito.com.br">Jean Brito</author>
+    <author email="jeanbrito22@gmail.com" href="#">Jean Brito</author>
     <content src="index.html" />
     <access origin="http://cozinhapp.sergiolopes.org" />
     <allow-navigation href="*" />
