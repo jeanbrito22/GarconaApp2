@@ -1,14 +1,14 @@
 declare var cordova: any;
 
-import { NumeroMesaView } from "../views/NumeroMesaView";
-import { ItensMenuView } from "../views/ItensMenuView";
-import { ProdutosAdicionadosView } from "../views/ProdutosAdicionadosView";
+import { NumeroMesaView, ItensMenuView, ProdutosAdicionadosView } from "../views/index";
+import { FinalizarPedido } from "../models/FinalizarPedido";
 
 export class GarconappController {
 
     private _numeroMesaView = new NumeroMesaView("#numero-mesa");
     private _itensMenuView = new ItensMenuView("a.collection-item");
-    private _produtosAdicionadosView: ProdutosAdicionadosView; 
+    private _produtosAdicionadosView: ProdutosAdicionadosView;
+    private _finalizarPedido = new FinalizarPedido("http://cozinhapp.sergiolopes.org/novo-pedido");
 
     public scannear(): void {
         cordova.plugins.barcodeScanner.scan(
@@ -33,7 +33,9 @@ export class GarconappController {
     }
 
     public finalizarPedido(): void {
-        alert('pedido finalizado');
+        this._finalizarPedido.finalizar({
+            mesa: jQuery('#numero-mesa').val(),
+            pedido: jQuery('.produtos-adicionados').text().replace(/\s\s+/g, '\n').trim()
+        });
     }
- 
 }

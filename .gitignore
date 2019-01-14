@@ -1,9 +1,6 @@
 ### ApacheCordova ###
 # Apache Cordova generated files and directories
 
-ts/models
-ts/helpers
-
 plugins/*
 platforms/*
 
